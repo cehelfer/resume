@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Helfer - Project Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            overflow: hidden;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .container {
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .resume-section {
+            text-align: left;
+        }
+        .contact {
+            margin-top: 20px;
+        }
+        .achievements {
+            background-color: #f4f4f4;
+            padding: 40px;
+            width: 100%;
+            text-align: left;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .sections-wrapper {
+            position: relative;
+            width: 100%;
+            height: 300vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="sections-wrapper">
+        <div class="section active" id="section1">
+            <div class="container">
+                <h1>Carlos Helfer</h1>
+                <h2>Project Manager | Engineering & Product Development</h2>
+                <p>Experienced Project Manager with expertise in Agile methodologies, product lifecycle management, and continuous improvement.</p>
+            </div>
+        </div>
+
+        <div class="section achievements" id="section2">
+            <div class="container">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>United Airlines Digital Marketing & Monetization Strategy (2023-Present):</strong> Led the development and integration of targeted advertising for personalized passenger experiences.</li>
+                    <li><strong>United Airlines Starlink Connectivity Integration (2025-Present):</strong> Coordinating the seamless compatibility of Starlink’s high-speed internet services with Panasonic’s IFE system.</li>
+                    <li><strong>United Airlines Single Aisle Retrofit (2023):</strong> Managed IFE integration for Airbus A319/320 and Boeing 737 fleet, ensuring seamless installation and upgrades.</li>
+                    <li><strong>United Airlines Bluetooth Implementation Project (2021):</strong> Spearheaded the transition from 3.5mm jacks to wireless audio on Boeing 737 Max 8.</li>
+                    <li><strong>Panasonic Avionics' Satellite Communications Integration (2018):</strong> Led the deployment of a new satellite modem, increasing bandwidth 20x for in-flight connectivity.</li>
+                    <li><strong>Emirates Boeing 777-300ER Project (2017):</strong> Implemented groundbreaking IFEC innovations, including the 'ice platform' and inflight GSM connectivity.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section contact" id="section3">
+            <div class="container">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:cehelfer@live.com">cehelfer@live.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/carlos-helfer-a5545716" target="_blank">linkedin.com/in/carlos-helfer-a5545716</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 1;
+        function changeSection(direction) {
+            if (direction === "next" && currentSection < 3) {
+                currentSection++;
+            } else if (direction === "prev" && currentSection > 1) {
+                currentSection--;
+            }
+            document.querySelectorAll(".section").forEach((section) => {
+                section.classList.remove("active");
+            });
+            document.getElementById("section" + currentSection).classList.add("active");
+        }
+
+        document.addEventListener("wheel", (event) => {
+            if (event.deltaY > 0) {
+                changeSection("next");
+            } else {
+                changeSection("prev");
+            }
+        });
+
+        let touchStartY = 0;
+        document.addEventListener("touchstart", (event) => {
+            touchStartY = event.touches[0].clientY;
+        });
+        
+        document.addEventListener("touchend", (event) => {
+            let touchEndY = event.changedTouches[0].clientY;
+            if (touchStartY - touchEndY > 50) {
+                changeSection("next");
+            } else if (touchEndY - touchStartY > 50) {
+                changeSection("prev");
+            }
+        });
+    </script>
+</body>
+</html>
