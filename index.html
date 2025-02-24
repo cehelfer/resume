@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carlos Helfer - Project Manager</title>
     <style>
+       .section#section3 .container {
+    text-align: center; /* Centers the content of the container */
+}
+
+.section#section3 h3 {
+    margin-bottom: 1em; /* Adds some space below the heading */
+}
+
+.section#section3 a {
+    display: inline-block; /* Makes the link inline-block to center it properly */
+    margin: 10px; /* Adds spacing around the links */
+    color: inherit; /* Inherits the text color from the body or specified */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.section#section3 a img {
+    margin-right: 8px; /* Space between the icon and the text */
+    vertical-align: middle; /* Aligns the icon with the text vertically */
+}
+ 
+        .section#section2 .container h3 {
+        font-size: 2em; /* Larger and more impactful header */
+        margin-bottom: 0.5em; /* Space below the header */
+    }
+
+    .section#section2 ul {
+        list-style-type: none; /* Removes bullet points for a cleaner look */
+        padding: 0;
+        margin: 0 0 20px 0; /* Adds space below the list */
+    }
+
+    .section#section2 li {
+        font-size: 1.2em; /* Larger font size for readability */
+        line-height: 1.6; /* Improved line spacing for better readability */
+        margin-bottom: 1em; /* Adds space between list items */
+    }
+
+    .section#section2 li strong {
+        font-weight: bold; /* Ensures that the strong tag has a noticeable bold styling */
+        color: #333; /* Slightly darker text for emphasis */
+    }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -26,11 +68,17 @@
             justify-content: center;
             align-items: center;
             text-align: left;
-            opacity: 1;
-            transform: none;
+            opacity: 0;
+            transform: translateY(50px);
             position: relative;
             width: 100%;
             scroll-snap-align: start;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .container {
@@ -113,6 +161,12 @@
         #menu li {
             padding: 10px 0;
             font-size: 18px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        #menu li:hover {
+            background: #f4f4f4;
+            color: #007BFF;
         }
     </style>
 </head>
@@ -123,19 +177,19 @@
         <span></span>
         <span></span>
         <ul id="menu">
-            <li onclick="scrollToSection(1)">United Airlines Digital Marketing & Monetization Strategy</li>
-            <li onclick="scrollToSection(2)">United Airlines Starlink Connectivity</li>
-            <li onclick="scrollToSection(3)">United Airlines Single Aisle Retrofit</li>
-            <li onclick="scrollToSection(4)">United Airlines Bluetooth Implementation</li>
-            <li onclick="scrollToSection(5)">Panasonic Avionics' Satellite Communications Integration</li>
-            <li onclick="scrollToSection(6)">Emirates' Boeing 777-300ER</li>
+            <li><a href="https://www.panasonic.aero/our-offerings/digital-solutions/revenue-generation" target="_blank">United Airlines Digital Marketing & Monetization Strategy</a></li>
+            <li><a href="https://www.united.com/en/us/newsroom/announcements/cision-125360" target="_blank">United Airlines Starlink Connectivity</a></li>
+            <li><a href="https://runwaygirlnetwork.com/2025/01/united-ramps-up-narrowbody-fleet-retrofit-with-signature-interior/#:~:text=Notably%2C%20United's%20chosen%20IFE%20vendor,IFE%20under%20massive%20narrowbody%20overhaul" target="_blank">United Airlines Single Aisle Retrofit</a></li>
+            <li><a href="https://www.panasonic.aero/blog/blog-post/going-wireless-bluetooth-comes-to-the-cabin" target="_blank">United Airlines Bluetooth Implementation</a></li>
+            <li><a href="https://www.aviationtoday.com/2016/11/07/new-aircraft-modem-introduced-for-panasonic-broadband-network/" target="_blank">Panasonic Avionics' Satellite Communications Integration</a></li>
+            <li><a href="https://www.aviationtoday.com/2017/11/14/panasonic-rolls-ifec-enhancements-emirates-boeing-777-300ers/" target="_blank">Leadership in Emirates' Boeing 777-300ER Project</a></li>
         </ul>
     </nav>
 
     <div class="sections-wrapper">
         <div class="section" id="section1">
             <div class="container">
-                <h1>Carlos Helfer</h1>
+                <h1>Carlos Helfer, MS</h1>
                 <h2>Project Manager | Engineering & Product Development</h2>
                 <p>Experienced Project Manager with expertise in Agile methodologies, product lifecycle management, and continuous improvement.</p>
             </div>
@@ -149,27 +203,84 @@
                     <li><strong>United Airlines Single Aisle Retrofit (2023):</strong> Managed IFE integration for Airbus A319/320 and Boeing 737 fleet, ensuring seamless installation and upgrades.</li>
                     <li><strong>United Airlines Bluetooth Implementation Project (2021):</strong> Spearheaded the transition from 3.5mm jacks to wireless audio on Boeing 737 Max 8.</li>
                     <li><strong>Panasonic Avionics' Satellite Communications Integration (2018):</strong> Led the deployment of a new satellite modem, increasing bandwidth 20x for in-flight connectivity.</li>
-                    <li><strong>Emirates Boeing 777-300ER Project (2017):</strong> Implemented groundbreaking IFEC innovations, including the 'ice platform' and inflight GSM connectivity.</li>
+                    <li><strong>Emirates Boeing 777-300ER Project (2017):</strong> Implemented groundbreaking IFEC innovations, including the 'ice platform' and inflight GCS connectivity.</li>
                 </ul>
+            </div>
             </div>
         </div>
         <div class="section" id="section3">
             <div class="container">
                 <h3>Contact</h3>
-                <p>Email: <a href="mailto:cehelfer@live.com">cehelfer@live.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/carlos-helfer-a5545716" target="_blank">linkedin.com/in/carlos-helfer-a5545716</a></p>
+                <p>
+                    <a href="mailto:cehelfer@live.com" title="Email Carlos Helfer">
+                        <img src="https://github.com/cehelfer/resume/blob/main/email.png?raw=true" alt="Email Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+                        cehelfer@live.com
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.linkedin.com/in/carloshelfer" target="_blank" title="LinkedIn Profile">
+                        <img src="https://github.com/cehelfer/resume/blob/main/linkedin.png?raw=true" alt="LinkedIn Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+                        linkedin.com/in/carloshelfer
+                    </a>
+                </p>
             </div>
         </div>
-    </div>
+        
 
-    <script>
-        function scrollToSection(index) {
-            let sections = document.querySelectorAll(".section");
-            if (sections[index - 1]) {
-                sections[index - 1].scrollIntoView({ behavior: "smooth" });
-                document.getElementById("menuCheckbox").checked = false;
-            }
-        }
-    </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let sections = document.querySelectorAll(".section");
+                let currentSectionIndex = 0;
+                let isScrolling = false;  // Flag to prevent multiple scrolls at once
+                let menu = document.getElementById('menuToggle'); // Access the menu
+        
+                // Initially hide the menu
+                menu.style.display = 'none';
+        
+                function handleScroll(event) {
+                    if (isScrolling) return;
+        
+                    isScrolling = true;
+                    setTimeout(() => {
+                        isScrolling = false;
+                    }, 1300);  // Adjust this time to match your transition time or as needed
+        
+                    if (event.deltaY < 0 && currentSectionIndex > 0) {
+                        // Scrolling up
+                        currentSectionIndex--;
+                    } else if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
+                        // Scrolling down
+                        currentSectionIndex++;
+                    }
+                    sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+                }
+        
+                // Add wheel event listener with a passive option set to false to enable preventDefault
+                window.addEventListener('wheel', handleScroll, { passive: false });
+        
+                let observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            // Check if the currently visible section is section2
+                            if (entry.target.id === 'section2') {
+                                menu.style.display = 'block'; // Show the menu
+                            }
+                        } else {
+                            entry.target.classList.remove("visible");
+                            // Hide the menu if section2 is not intersecting
+                            if (entry.target.id === 'section2') {
+                                menu.style.display = 'none'; // Hide the menu
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+        
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            });
+        </script>
+        
 </body>
 </html>
